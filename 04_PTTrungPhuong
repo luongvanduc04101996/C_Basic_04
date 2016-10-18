@@ -38,7 +38,12 @@ else
     {
         int nghiem;
         nghiem =-b/(2*a);
-        printf("Pt co 2 nghiem: %f\t%f",-sqrt(nghiem),sqrt(nghiem));
+        if(nghiem>0)
+            printf("Pt co 2 nghiem: %f\t%f",-sqrt(nghiem),sqrt(nghiem));
+        else if(nghiem=0)
+                printf("Pt co 1 nghiem: %f",nghiem);
+             else
+                printf("Pt vo nghiem");
     }
     else if(delta>0){
         int nghiem1,nghiem2;
