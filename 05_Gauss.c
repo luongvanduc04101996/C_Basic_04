@@ -1,6 +1,6 @@
 #include<stdio.h>
 void main(){
-int n,i,j,a[30][30],b=1;
+int n,i,j,k,a[30][30],b=1;
 int nghiem[30],nghiemGia;
 int x=1;
 printf("HPT co may an :\n");
@@ -48,6 +48,18 @@ while(b<n)
                 a[i][j]=a[i][j]/a[i][b];
             }
         }
+        else
+        {
+            for(j=b;j<=n+1;j++)
+            {
+                for(k=n;k>=b;k--)
+                    {
+                        if(a[k][j]!=0)
+                            a[i][j]=a[k][j]-a[i][j];
+                            break;
+                    }
+            }
+        }
     }
 for(i=b+1;i<=n;i++)
 {
@@ -71,7 +83,6 @@ for(i=n;i>=1;i--)
             nghiem[i]=a[i][n+1]-nghiemGia;
             x++;
         }
-
 }
 for(i=1;i<=n;i++)
 {
